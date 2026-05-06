@@ -28,3 +28,43 @@ body {
   );
   background-size: 24px 24px;
 }
+
+.argenext-logo .argenext-circle {
+  transition: stroke 0.3s;
+}
+.argenext-logo:hover .argenext-circle {
+  stroke: #3b82f6;
+}
+
+.argenext-logo .argenext-letter {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 0;
+}
+.argenext-logo:hover .argenext-letter {
+  animation: argenext-redraw 1.8s ease-in-out infinite;
+}
+
+.argenext-logo .argenext-cursor {
+  opacity: 0;
+}
+.argenext-logo:hover .argenext-cursor {
+  animation: argenext-cursor-blink 0.6s step-end infinite;
+}
+
+@keyframes argenext-redraw {
+  0%, 100% {
+    stroke-dashoffset: 200;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes argenext-cursor-blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}

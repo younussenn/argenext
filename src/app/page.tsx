@@ -6,6 +6,7 @@ import { PixelAvatar } from "@/components/PixelAvatar";
 import { MagneticButton } from "@/components/MagneticButton";
 import { useLanguage } from "@/hooks/useLanguage";
 import type { Language } from "@/lib/translations";
+import { Logo } from "@/components/Logo";
 
 const easeOutExpo: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -106,8 +107,9 @@ export default function Home() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="flex items-center justify-between mb-32 sm:mb-40"
       >
-        <a href="/" className="font-mono text-base font-medium">
-          argenext<span className="text-blue-500">.</span>
+        <a href="/" className="font-mono text-base font-medium flex items-center gap-2.5">
+          <Logo size={26} />
+          <span>argenext<span className="text-blue-500">.</span></span>
         </a>
         <div className="flex items-center gap-6 sm:gap-8">
           <ul className="hidden sm:flex gap-8 font-mono text-sm text-zinc-400">
@@ -376,10 +378,13 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t border-zinc-900 pt-8 pb-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-        <div>
-          <p className="font-mono text-base font-medium mb-1">
-            argenext<span className="text-blue-500">.</span>
-          </p>
+       <div>
+          <div className="flex items-center gap-2.5 mb-1">
+            <Logo size={24} />
+            <p className="font-mono text-base font-medium">
+              argenext<span className="text-blue-500">.</span>
+            </p>
+          </div>
           <p className="font-mono text-xs text-zinc-600">{t.footer.copyright}</p>
         </div>
         <p className="font-mono text-xs text-zinc-600">{t.footer.location}</p>
